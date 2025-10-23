@@ -19,6 +19,8 @@ interface EditObjectDialogProps {
   object: FirebaseObject | null
 }
 
+const CONDITION_OPTIONS = ["Bad", "Good", "Maintenance"]
+
 export function EditObjectDialog({ open, onOpenChange, object }: EditObjectDialogProps) {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState<Omit<FirebaseObject, "id">>({
@@ -45,6 +47,14 @@ export function EditObjectDialog({ open, onOpenChange, object }: EditObjectDialo
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }))
+  }
+
+  const handleConditionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      condition: value,
     }))
   }
 
@@ -111,13 +121,21 @@ export function EditObjectDialog({ open, onOpenChange, object }: EditObjectDialo
 
           <div className="space-y-2">
             <Label htmlFor="edit-condition">Condition *</Label>
-            <Input
+            <select
               id="edit-condition"
               name="condition"
               value={formData.condition}
-              onChange={handleInputChange}
+              onChange={handleConditionChange}
               required
-            />
+              className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            >
+              <option value="">Select a condition</option>
+              {CONDITION_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="space-y-2">

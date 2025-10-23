@@ -12,7 +12,7 @@ const firebaseConfig = {
 }
 
 if (!firebaseConfig.databaseURL) {
-  console.error("❌ Firebase databaseURL is missing. Check your .env.local file!")
+  console.error("Firebase databaseURL is missing. Check your .env.local file!")
 }
 
 const app = initializeApp(firebaseConfig)
