@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Equipment CMS",
+  title: "PC200 KKB CMS",
   description: "Admin Dashboard for Equipment Management",
   generator: "v0.app",
 }
