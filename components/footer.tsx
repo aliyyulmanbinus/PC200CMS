@@ -9,7 +9,7 @@ export function Footer() {
             <p>&copy; {currentYear} PT. Kreasi Kode Biner. All rights reserved.</p>
           </div>
           <div className="text-xs text-muted-foreground">
-            <p>Equipment Management System</p>
+            <p>Equipment Management System PC200</p>
           </div>
         </div>
       </div>

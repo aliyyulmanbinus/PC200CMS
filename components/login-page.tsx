@@ -67,7 +67,7 @@ export function LoginPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-black rounded-lg mb-4">
             <Lock className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-black mb-2">Equipment CMS</h1>
+          <h1 className="text-3xl font-bold text-black mb-2">PC200 CMS</h1>
           <p className="text-gray-600">Admin Dashboard</p>
         </div>
 
@@ -148,7 +148,7 @@ export function LoginPage() {
         </Card>
 
         {/* Footer */}
-        <p className="text-center text-gray-500 text-xs mt-6">© 2025 Equipment CMS. All rights reserved.</p>
+        <p className="text-center text-gray-500 text-xs mt-6">© 2025 Kreasi Kode Biner CMS. All rights reserved.</p>
       </div>
 
       <Toaster />

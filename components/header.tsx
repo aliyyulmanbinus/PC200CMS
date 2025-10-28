@@ -40,7 +40,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Left: Logo/Title */}
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold text-foreground">Equipment CMS</h1>
+            <h1 className="text-xl font-bold text-foreground">PC200 CMS</h1>
           </div>
 
           {/* Center: Admin Info */}
