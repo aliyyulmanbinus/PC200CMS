@@ -97,7 +97,7 @@ export function Dashboard() {
         <div className="container mx-auto py-8 px-4">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">Equipment CMS</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">PC 200 CMS</h1>
               <p className="text-muted-foreground mt-2">Manage your equipment and parts inventory</p>
             </div>
             <AddObjectDialog open={addDialogOpen} onOpenChange={setAddDialogOpen} />

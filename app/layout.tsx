@@ -9,9 +9,14 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "PC200 KKB CMS",
+  title: "PC200 - Kreasi Kode Biner",
   description: "Admin Dashboard for Equipment Management",
   generator: "v0.app",
+  icons: {
+    icon: "public/kkb.png", // letakkan file favicon.ico di folder public
+    shortcut: "/kkb.png",
+    apple: "/apple-touch-icon.png", // opsional, untuk iOS
+  },
 }
 
 export default function RootLayout({
