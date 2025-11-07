@@ -25,7 +25,7 @@ export function Dashboard() {
   const { logout } = useAuth()
 
   useEffect(() => {
-    const objectsRef = ref(database, "objects")
+    const objectsRef = ref(database, "toyota")
 
     const unsubscribe = onValue(
       objectsRef,
