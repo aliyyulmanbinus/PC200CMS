@@ -15,7 +15,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "@/hooks/use-toast"
 
 export function Dashboard() {
-  const [toyota, setObjects] = useState<FirebaseObject[]>([])
+  const [toyotas, setObjects] = useState<FirebaseObject[]>([])
   const [loading, setLoading] = useState(true)
   const [addDialogOpen, setAddDialogOpen] = useState(false)
   const [editDialogOpen, setEditDialogOpen] = useState(false)
@@ -25,7 +25,7 @@ export function Dashboard() {
   const { logout } = useAuth()
 
   useEffect(() => {
-    const objectsRef = ref(database, "toyota")
+    const objectsRef = ref(database, "toyotas")
 
     const unsubscribe = onValue(
       objectsRef,
@@ -103,7 +103,7 @@ export function Dashboard() {
             <AddObjectDialog open={addDialogOpen} onOpenChange={setAddDialogOpen} />
           </div>
 
-          <DashboardContent toyota={toyota} loading={loading} onEdit={handleEdit} onDelete={handleDelete} />
+          <DashboardContent toyotas={toyotas} loading={loading} onEdit={handleEdit} onDelete={handleDelete} />
         </div>
       </main>
 

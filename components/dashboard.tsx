@@ -8,7 +8,7 @@ import { Pencil, Trash2, Search, X, ChevronLeft, ChevronRight } from "lucide-rea
 import { useState, useMemo } from "react"
 
 interface DashboardProps {
-  toyota: FirebaseObject[]
+  toyotas: FirebaseObject[]
   loading: boolean
   onEdit: (object: FirebaseObject) => void
   onDelete: (object: FirebaseObject) => void
@@ -16,14 +16,14 @@ interface DashboardProps {
 
 const ITEMS_PER_PAGE = 10
 
-export function Dashboard({ toyota, loading, onEdit, onDelete }: DashboardProps) {
+export function Dashboard({ toyotas, loading, onEdit, onDelete }: DashboardProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
 
   const filteredObjects = useMemo(() => {
-    if (!searchQuery.trim()) return toyota
-    return toyota.filter((obj) => obj.objectDisplayName.toLowerCase().includes(searchQuery.toLowerCase()))
-  }, [toyota, searchQuery])
+    if (!searchQuery.trim()) return toyotas
+    return toyotas.filter((obj) => obj.objectDisplayName.toLowerCase().includes(searchQuery.toLowerCase()))
+  }, [toyotas, searchQuery])
 
   const totalPages = Math.ceil(filteredObjects.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
@@ -45,7 +45,7 @@ export function Dashboard({ toyota, loading, onEdit, onDelete }: DashboardProps)
     )
   }
 
-  if (toyota.length === 0) {
+  if (toyotas.length === 0) {
     return (
       <Card className="p-12 text-center">
         <p className="text-muted-foreground text-lg">No equipment found. Create your first entry to get started.</p>
@@ -79,7 +79,7 @@ export function Dashboard({ toyota, loading, onEdit, onDelete }: DashboardProps)
 
       {searchQuery && (
         <p className="text-sm text-muted-foreground">
-          Found {filteredObjects.length} of {toyota.length} equipment
+          Found {filteredObjects.length} of {toyotas.length} equipment
         </p>
       )}
 

@@ -74,7 +74,7 @@ export function EditObjectDialog({ open, onOpenChange, object }: EditObjectDialo
 
     setLoading(true)
     try {
-      const objectRef = ref(database, `toyota/${object.id}`)
+      const objectRef = ref(database, `toyotas/${object.id}`)
       await update(objectRef, formData)
 
       toast({

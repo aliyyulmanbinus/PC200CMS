@@ -68,7 +68,7 @@ export function AddObjectDialog({ open, onOpenChange }: AddObjectDialogProps) {
 
     setLoading(true)
     try {
-      const objectsRef = ref(database, "toyota")
+      const objectsRef = ref(database, "toyotas")
       const newObjectRef = push(objectsRef)
 
       await set(newObjectRef, formData)
